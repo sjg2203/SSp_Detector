@@ -1,6 +1,6 @@
 # Sleep Spindles Detector
 
-[Sleep Spindles Detector](SSp_Detector.py) toolbox analyse raw EEG signals to then extrapolate the number of sleep spindles using either the absolute or relative Sigma power (11-16Hz).
+[Sleep Spindles Detector](https://github.com/sjg2203/SSp_Detector) toolbox analyse raw EEG signals to then extrapolate the number of sleep spindles using either the absolute or relative Sigma power (11-16Hz).
 
 The toolbox is optimised for Python 3.10 and above and was tested on both Windows and macOS ARM.
 
