@@ -1,7 +1,7 @@
 # Sleep Spindles Detector
 
 [![Version](https://badge.fury.io/gh/sjg2203%2FSSp_Detector.svg)](https://badge.fury.io/gh/sjg2203%2FSSp_Detector)
-[![PyPI pyversions](https://img.shields.io/pypi/pyversions/SSp_Detector.svg)](https://pypi.python.org/pypi/SSp_Detector)
+[![PyPI pyversions](https://img.shields.io/pypi/pyversions/SSp-Detector.svg)](https://pypi.python.org/pypi/SSp-Detector)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://github.com/sjg2203/SSp_Detector/blob/main/LICENSE)
 [![security: bandit](https://img.shields.io/badge/security-bandit-yellow.svg)](https://github.com/PyCQA/bandit)
 [![HitCount](https://hits.dwyl.com/sjg2203/SSp_Detector.svg)](https://hits.dwyl.com/sjg2203/SSp_Detector)
