@@ -1,7 +1,10 @@
 # Sleep Spindles Detector
 
-[![GitHub release](https://img.shields.io/github/release/sjg2203/SSp_Detector)](https://github.com/sjg2203/SSp_Detector/releases) [![PyPI pyversions](https://img.shields.io/pypi/pyversions/SSp_Detector.svg)](https://pypi.python.org/pypi/SSp_Detector)
-[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://github.com/sjg2203/SSp_Detector/LICENSE) [![security: bandit](https://img.shields.io/badge/security-bandit-yellow.svg)](https://github.com/PyCQA/bandit) [![HitCount](https://hits.dwyl.com/sjg2203/SSp_Detector.svg)](https://hits.dwyl.com/sjg2203/SSp_Detector)
+[![GitHub release](https://img.shields.io/github/release/sjg2203/SSp_Detector)](https://github.com/sjg2203/SSp_Detector/releases)
+[![PyPI pyversions](https://img.shields.io/pypi/pyversions/SSp_Detector.svg)](https://pypi.python.org/pypi/SSp_Detector)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://github.com/sjg2203/SSp_Detector/blob/main/LICENSE)
+[![security: bandit](https://img.shields.io/badge/security-bandit-yellow.svg)](https://github.com/PyCQA/bandit)
+[![HitCount](https://hits.dwyl.com/sjg2203/SSp_Detector.svg)](https://hits.dwyl.com/sjg2203/SSp_Detector)
 
 [Sleep Spindles Detector](https://github.com/sjg2203/SSp_Detector) toolbox analyse raw EEG signals to then extrapolate the number of sleep spindles using either the absolute or relative Sigma power (11-16Hz).
 
@@ -38,7 +41,18 @@ pip install ssp_detector
 Everything worked if the following command do not return any error:
 
 ```python
-import ssp_detector
+import mne
+from ssp_detector import spindles_abs
+from ssp_detector import spindles_rel
+from tkinter import filedialog as fd
+
+#Load an EDF file using MNE
+edf=fd.askopenfilename(title='SELECT EDF FILE',filetypes=(("EDF files","*.edf"),("all files","*.*")))
+raw=mne.io.read_raw_edf(edf,preload=True)
+sfreq=raw.info['sfreq']
+#Return sleep spindles count
+spindles_abs(raw,sf=sfreq,thresh={'abs_pow':1.25})
+spindles_rel(raw,sf=sfreq,thresh={'rel_pow':0.2})
 ```
 
 ## Citation
