@@ -1,5 +1,5 @@
 import logging
-from ssp_detector import *
+from .ssp_detector import *
 from outdated import warn_if_outdated
 
 #Define logger
