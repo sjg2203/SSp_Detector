@@ -31,7 +31,7 @@ INSTALL_REQUIRES=['glob',
                   'shutil',
                   'time',
                   'tk>=8.6']
-CLASSIFIERS=['Development Status :: 2 - Pre-Alpha',
+CLASSIFIERS=['Development Status :: 5 - Production/Stable',
              'Intended Audience :: Science/Research',
              'License :: OSI Approved :: Apache Software License',
              'Operating System :: Unix',
