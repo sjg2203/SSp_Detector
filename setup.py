@@ -12,7 +12,7 @@
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 DISTNAME='SSp_Detector'
-VERSION='2023.10.18a1'
+VERSION='2023.10.18a2'
 DESCRIPTION='Sleep spindles detector'
 LONG_DESCRIPTION='SSp_Detector: open-source Python package to detect sleep spindles using absolute or relative power.'
 DESCRIPTION_CONTENT_TYPE='text/x-rst;charset=UTF-8'
