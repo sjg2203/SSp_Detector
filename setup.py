@@ -24,6 +24,7 @@ PACKAGES=['SSp_Detector']
 INSTALL_REQUIRES=['glob',
                   'mne>=1.5.1',
                   'os',
+                  'outdated',
                   'numpy>=1.24.3',
                   'pandas>=2.0.0',
                   'scipy>=1.11',
