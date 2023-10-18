@@ -11,6 +11,7 @@
 #  EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+import logging
 import mne
 import scipy
 import numpy as np
@@ -18,6 +19,13 @@ from scipy import signal
 from mne.filter import filter_data
 from scipy.interpolate import interp1d
 
+
+LOGGING_TYPES=dict(DEBUG=logging.DEBUG,
+                     INFO=logging.INFO,
+                     WARNING=logging.WARNING,
+                     ERROR=logging.ERROR,
+                     CRITICAL=logging.CRITICAL,
+                     )
 
 def spindles_abs(raw,sf,thresh={'abs_pow':1.25})->int:
 	"""Detects sleep spindles using absolute Sigma power.
