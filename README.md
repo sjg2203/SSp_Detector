@@ -1,11 +1,12 @@
 # Sleep Spindles Detector
 
-[![Version](https://badge.fury.io/gh/sjg2203%2FSSp_Detector.svg)](https://badge.fury.io/gh/sjg2203%2FSSp_Detector)
-[![PyPI version](https://badge.fury.io/py/SSp-Detector.svg)](https://badge.fury.io/py/SSp-Detector)
-[![PyPI pyversions](https://img.shields.io/pypi/versions/SSp-Detector.svg)](https://pypi.python.org/pypi/SSp-Detector)
+[![PyPI - Version](https://img.shields.io/pypi/v/SSp_Detector)](https://pypi.python.org/pypi/SSp-Detector)
 [![PyPI pyversions](https://img.shields.io/pypi/pyversions/SSp-Detector.svg)](https://pypi.python.org/pypi/SSp-Detector)
+[![GitHub](https://img.shields.io/github/license/sjg2203/SSp_Detector)](https://github.com/sjg2203/SSp_Detector/blob/main/LICENSE)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://github.com/sjg2203/SSp_Detector/blob/main/LICENSE)
 [![security: bandit](https://img.shields.io/badge/security-bandit-yellow.svg)](https://github.com/PyCQA/bandit)
+[![PyPI - Status](https://img.shields.io/pypi/status/SSp_Detector)](https://pypi.python.org/pypi/SSp-Detector)
+[![PyPI - Wheel](https://img.shields.io/pypi/wheel/SSp_Detector)](https://pypi.python.org/pypi/SSp-Detector)
 [![HitCount](https://hits.dwyl.com/sjg2203/SSp_Detector.svg)](https://hits.dwyl.com/sjg2203/SSp_Detector)
 
 [Sleep Spindles Detector](https://github.com/sjg2203/SSp_Detector) toolbox analyse raw EEG signals to then extrapolate the number of sleep spindles using either the absolute or relative Sigma power (11-16Hz).
