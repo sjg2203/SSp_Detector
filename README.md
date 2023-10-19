@@ -5,7 +5,6 @@
 [![GitHub](https://img.shields.io/github/license/sjg2203/SSp_Detector)](https://github.com/sjg2203/SSp_Detector/blob/main/LICENSE)
 [![security: bandit](https://img.shields.io/badge/security-bandit-yellow.svg)](https://github.com/PyCQA/bandit)
 [![PyPI - Status](https://img.shields.io/pypi/status/SSp_Detector)](https://pypi.python.org/pypi/SSp-Detector)
-[![PyPI - Wheel](https://img.shields.io/pypi/wheel/SSp_Detector)](https://pypi.python.org/pypi/SSp-Detector)
 [![HitCount](https://hits.dwyl.com/sjg2203/SSp_Detector.svg)](https://hits.dwyl.com/sjg2203/SSp_Detector)
 
 [Sleep Spindles Detector](https://github.com/sjg2203/SSp_Detector) toolbox analyse raw EEG signals to then extrapolate the number of sleep spindles using either the absolute or relative Sigma power (11-16Hz).
@@ -24,9 +23,7 @@ To report a bug, please open a new [issue](https://github.com/sjg2203/SSp_Detect
 
 Note that this program is provided with NO WARRANTY OF ANY KIND under Apache 2.0 [license](LICENSE).
 
-
 ## Installation of Python package
-[![PyPI - Wheel](https://img.shields.io/pypi/wheel/SSp_Detector)](https://pypi.python.org/pypi/SSp-Detector)
 
 To install the toolbox, simply use:
 
@@ -36,7 +33,7 @@ To install the toolbox, simply use:
 conda install -c conda-forge ssp_detector
 ```
 
-- Using pip
+- Using pip [![PyPI - Wheel](https://img.shields.io/pypi/wheel/SSp_Detector)](https://pypi.python.org/pypi/SSp-Detector)
 
 ```python
 pip install ssp_detector
