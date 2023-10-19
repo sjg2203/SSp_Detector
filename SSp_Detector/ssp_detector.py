@@ -170,7 +170,7 @@ def spindles_rel(raw,sf,thresh={'rel_pow':0.2})->int:
 		sf=float(100)
 	freq_broad=[1,30]
 	data=filter_data(raw_data,sf,freq_broad[0],freq_broad[1],method='fir',verbose=0)  #Apply a low and high bandpass filter
-	f,t,SXX=signal.stft(data,sf,nperseg=(2*sf),noverlap=((2*sf)-(0.2*sf)))  #Using STFT to compute the point-wise relative power
+	f,t,SXX=signal.stft(data,sf,nperseg=int((2*sf)),noverlap=int(((2*sf)-(0.2*sf))))  #Using STFT to compute the point-wise relative power
 	idx_band=np.logical_and(f>=freq_broad[0],f<=freq_broad[1])  #Keeping only the frequency of interest and Interpolating
 	f=f[idx_band]
 	SXX=SXX[idx_band,:]
