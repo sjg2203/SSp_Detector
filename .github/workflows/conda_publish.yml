@@ -10,12 +10,10 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: publish-to-conda
-      uses: fcakyon/conda-publish-action@v1.3
-      with:
-        subdir: 'conda'
-        anacondatoken: ${{ secrets.CONDA_API_TOKEN }}
-        #platforms: 'win osx linux'
-        # Platforms: remove one or more of these platforms
-        Platforms: 'osx-64 linux-32 linux-64 win-32 win-64 noarch'
+      - uses: actions/checkout@v2
+      - name: Publish Loop Conda
+        uses: Loop3D/conda-publish-action@1.0
+        with:
+          subdir: "conda"
+          anacondatoken: ${{ secrets.CONDA_API_TOKEN }}
+          platforms: "win osx linux"
