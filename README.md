@@ -27,16 +27,16 @@ Note that this program is provided with NO WARRANTY OF ANY KIND under Apache 2.0
 
 To install the toolbox, simply use:
 
-- Using conda [![Conda package](https://github.com/sjg2203/SSp_Detector/actions/workflows/conda_publish.yml/badge.svg)](https://github.com/sjg2203/SSp_Detector/actions/workflows/conda_publish.yml)
-
-```python
-conda install -c conda-forge ssp_detector
-```
-
 - Using pip [![Pypi package](https://github.com/sjg2203/SSp_Detector/actions/workflows/pypi_publish.yml/badge.svg)](https://github.com/sjg2203/SSp_Detector/actions/workflows/pypi_publish.yml) [![PyPI - Wheel](https://img.shields.io/pypi/wheel/SSp_Detector)](https://pypi.python.org/pypi/SSp-Detector)
 
 ```python
 pip install ssp_detector
+```
+
+- Using conda [![Conda package](https://github.com/sjg2203/SSp_Detector/actions/workflows/conda_publish.yml/badge.svg)](https://github.com/sjg2203/SSp_Detector/actions/workflows/conda_publish.yml)
+
+```python
+conda install -c conda-forge ssp_detector
 ```
 
 Everything worked if the following command do not return any error:
