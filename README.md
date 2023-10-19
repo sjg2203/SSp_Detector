@@ -3,7 +3,6 @@
 [![PyPI - Version](https://img.shields.io/pypi/v/SSp_Detector)](https://pypi.python.org/pypi/SSp-Detector)
 [![PyPI pyversions](https://img.shields.io/pypi/pyversions/SSp-Detector.svg)](https://pypi.python.org/pypi/SSp-Detector)
 [![GitHub](https://img.shields.io/github/license/sjg2203/SSp_Detector)](https://github.com/sjg2203/SSp_Detector/blob/main/LICENSE)
-[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://github.com/sjg2203/SSp_Detector/blob/main/LICENSE)
 [![security: bandit](https://img.shields.io/badge/security-bandit-yellow.svg)](https://github.com/PyCQA/bandit)
 [![PyPI - Status](https://img.shields.io/pypi/status/SSp_Detector)](https://pypi.python.org/pypi/SSp-Detector)
 [![PyPI - Wheel](https://img.shields.io/pypi/wheel/SSp_Detector)](https://pypi.python.org/pypi/SSp-Detector)
@@ -27,6 +26,8 @@ Note that this program is provided with NO WARRANTY OF ANY KIND under Apache 2.0
 
 
 ## Installation of Python package
+[![PyPI - Wheel](https://img.shields.io/pypi/wheel/SSp_Detector)](https://pypi.python.org/pypi/SSp-Detector)
+
 To install the toolbox, simply use:
 
 - Using conda
