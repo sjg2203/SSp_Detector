@@ -12,7 +12,7 @@
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 DISTNAME='SSp_Detector'
-VERSION='2023.10.18a2'
+VERSION='2023.10.18a3'
 DESCRIPTION='Sleep spindles detector'
 LONG_DESCRIPTION='SSp_Detector: open-source Python package to detect sleep spindles using absolute or relative power.'
 DESCRIPTION_CONTENT_TYPE='text/x-rst;charset=UTF-8'
@@ -21,15 +21,11 @@ MAINTAINER='Simon J. Guillot'
 MAINTAINER_EMAIL='simon.guillot@inserm.fr'
 LICENSE='Apache 2.0 license'
 PACKAGES=['SSp_Detector']
-INSTALL_REQUIRES=['glob',
-                  'mne>=1.5.1',
-                  'os',
+INSTALL_REQUIRES=['mne>=1.5.1',
                   'outdated',
                   'numpy>=1.24.3',
                   'pandas>=2.0.0',
                   'scipy>=1.11',
-                  'shutil',
-                  'time',
                   'tk>=8.6']
 CLASSIFIERS=['Development Status :: 5 - Production/Stable',
              'Intended Audience :: Science/Research',
