@@ -51,6 +51,7 @@ from tkinter import filedialog as fd
 edf=fd.askopenfilename(title='SELECT EDF FILE',filetypes=(("EDF files","*.edf"),("all files","*.*")))
 raw=mne.io.read_raw_edf(edf,preload=True)
 sfreq=raw.info['sfreq']
+
 #Return sleep spindles count
 spindles_abs(raw,sf=sfreq,thresh={'abs_pow':1.25})
 spindles_rel(raw,sf=sfreq,thresh={'rel_pow':0.2})
