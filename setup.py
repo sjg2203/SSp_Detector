@@ -12,7 +12,7 @@
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 DISTNAME='SSp_Detector'
-VERSION='2023.10.19a1'
+VERSION='2023.10.25rc1'
 DESCRIPTION='Sleep spindles detector'
 try:
     LONG_DESCRIPTION=open('README.md').read()
