@@ -28,8 +28,7 @@ INSTALL_REQUIRES=['mne>=1.5.1',
                   'outdated',
                   'numpy>=1.24.3',
                   'pandas>=2.0.0',
-                  'scipy>=1.11',
-                  'tk>=8.6']
+                  'scipy>=1.11']
 CLASSIFIERS=['Development Status :: 5 - Production/Stable',
              'Intended Audience :: Science/Research',
              'License :: OSI Approved :: Apache Software License',
