@@ -59,6 +59,6 @@ spindles_rel(raw,sf=sfreq,thresh={'rel_pow':0.2})
 
 ## Citation
 
-To cite this toolbox, please use the following:
+If you use this toolbox, cite it using as followed:
 
  - Simon J Guillot, Sleep Spindles Detector toolbox (version "build_number", https://github.com/sjg2203/SSp_Detector) in Python.
