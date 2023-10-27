@@ -1,3 +1,6 @@
+<script src="https://cdn.jsdelivr.net/npm/github-repo-cards@1.0.10/app.js" defer></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-repo-cards@1.0.10/style.css">
+<section class="github-repo-cards" data-user="sjg2203" data-target-blank=True></section>
 # Sleep Spindles Detector
 
 [![PyPI - Version](https://img.shields.io/pypi/v/SSp_Detector)](https://pypi.python.org/pypi/SSp-Detector)
