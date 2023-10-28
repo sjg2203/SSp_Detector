@@ -27,16 +27,16 @@ Note that this program is provided with NO WARRANTY OF ANY KIND under Apache 2.0
 
 To install the toolbox, simply use:
 
-- Using pip [![Pypi package](https://github.com/sjg2203/SSp_Detector/actions/workflows/pypi_publish.yml/badge.svg?branch=main)](https://github.com/sjg2203/SSp_Detector/actions/workflows/pypi_publish.yml) [![PyPI - Wheel](https://img.shields.io/pypi/wheel/SSp_Detector)](https://pypi.python.org/pypi/SSp-Detector)
-
-```python
-pip install ssp_detector
-```
-
 - Using conda [![Conda package](https://github.com/sjg2203/SSp_Detector/actions/workflows/conda_publish.yml/badge.svg)](https://github.com/sjg2203/SSp_Detector/actions/workflows/conda_publish.yml)
 
 ```python
 conda install -c conda-forge ssp_detector
+```
+
+- Using pip [![Pypi package](https://github.com/sjg2203/SSp_Detector/actions/workflows/pypi_publish.yml/badge.svg?branch=main)](https://github.com/sjg2203/SSp_Detector/actions/workflows/pypi_publish.yml) [![PyPI - Wheel](https://img.shields.io/pypi/wheel/SSp_Detector)](https://pypi.python.org/pypi/SSp-Detector)
+
+```python
+pip install ssp_detector
 ```
 
 Everything worked if the following command do not return any error:
@@ -59,6 +59,6 @@ spindles_rel(raw,sf=sfreq,thresh={'rel_pow':0.2})
 
 ## Citation
 
-If you use this toolbox, use the citation below:
+If you use this toolbox, please cite as followed:
 
  - Simon J Guillot, Sleep Spindles Detector toolbox (version "build_number", https://github.com/sjg2203/SSp_Detector) in Python.
