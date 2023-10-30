@@ -18,7 +18,7 @@ try:
     LONG_DESCRIPTION=open('SSp_Detector/README.md','r')
 except (IOError):
     LONG_DESCRIPTION='SSp_Detector: open-source Python package to detect sleep spindles using absolute or relative power.'
-DESCRIPTION_CONTENT_TYPE='text/markdown;charset=UTF-8'
+DESCRIPTION_CONTENT_TYPE='text/markdown'
 URL='https://github.com/sjg2203/SSp_Detector'
 MAINTAINER='Simon J. Guillot'
 MAINTAINER_EMAIL='simon.guillot@inserm.fr'
