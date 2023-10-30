@@ -28,13 +28,13 @@ Note that this program is provided with NO WARRANTY OF ANY KIND under Apache 2.0
 
 To install the toolbox, simply use:
 
-- Using conda [![Conda package](https://github.com/sjg2203/SSp_Detector/actions/workflows/conda_publish.yml?logo=anaconda)](https://github.com/sjg2203/SSp_Detector/actions/workflows/conda_publish.yml)
+- Using conda [![Conda package](https://github.com/sjg2203/SSp_Detector/actions/workflows/conda_publish.yml/badge.svg)](https://github.com/sjg2203/SSp_Detector/actions/workflows/conda_publish.yml)
 
 ```python
 conda install -c conda-forge ssp_detector
 ```
 
-- Using pip [![Pypi package](https://github.com/sjg2203/SSp_Detector/actions/workflows/pypi_publish.yml?branch=main&logo=pypi)](https://github.com/sjg2203/SSp_Detector/actions/workflows/pypi_publish.yml) [![PyPI - Wheel](https://img.shields.io/pypi/wheel/SSp_Detector)](https://pypi.python.org/pypi/SSp-Detector)
+- Using pip [![Pypi package](https://github.com/sjg2203/SSp_Detector/actions/workflows/pypi_publish.yml/badge.svg?branch=main)](https://github.com/sjg2203/SSp_Detector/actions/workflows/pypi_publish.yml) [![PyPI - Wheel](https://img.shields.io/pypi/wheel/SSp_Detector)](https://pypi.python.org/pypi/SSp-Detector)
 
 ```python
 pip install ssp_detector
