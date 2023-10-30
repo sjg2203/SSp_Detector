@@ -28,7 +28,7 @@ Note that this program is provided with NO WARRANTY OF ANY KIND under Apache 2.0
 
 To install the toolbox, simply use:
 
-- Using conda [![Conda package](https://github.com/sjg2203/SSp_Detector/actions/workflows/conda_publish.yml/badge.svg)](https://github.com/sjg2203/SSp_Detector/actions/workflows/conda_publish.yml)
+- Using conda [![Board Status](https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ssp_detector-feedstock?branchName=main)](https://anaconda.org/conda-forge/ssp_detector)
 
 ```python
 conda install -c conda-forge ssp_detector
