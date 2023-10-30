@@ -12,19 +12,20 @@
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 try:
-    import io
+    import io, os
     from setuptools import setup
     _has_setuptools=True
 except ImportError:
     from distutils.core import setup
+path=os.path.abspath(os.path.dirname(__name__))
 
 DISTNAME='SSp_Detector'
 VERSION='2023.10.28'
 DESCRIPTION='Sleep spindles detector'
 try:
-    with io.open('README.md') as readme_file:
-        LONG_DESCRIPTION=readme_file.read()
-except (IOError):
+    with io.open(os.path.join(path,'SSp_Detector\README.md'),encoding='utf-8') as f:
+        LONG_DESCRIPTION='\n'+f.read()
+except FileNotFoundError:
     LONG_DESCRIPTION='SSp_Detector: open-source Python package to detect sleep spindles using absolute or relative power.'
 DESCRIPTION_CONTENT_TYPE='text/markdown'
 URL='https://github.com/sjg2203/SSp_Detector'
