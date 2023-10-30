@@ -1,8 +1,8 @@
 # Sleep Spindles Detector
 
-[![PyPI - Version](https://img.shields.io/pypi/v/SSp_Detector)](https://pypi.python.org/pypi/SSp-Detector)
-[![PyPI pyversions](https://img.shields.io/pypi/pyversions/SSp-Detector.svg)](https://pypi.python.org/pypi/SSp-Detector)
-[![License](https://img.shields.io/github/license/sjg2203/SSp_Detector)](https://github.com/sjg2203/SSp_Detector/blob/main/LICENSE)
+[![PyPI - Version](https://img.shields.io/pypi/v/SSp_Detector?logo=pypi)](https://pypi.python.org/pypi/SSp-Detector)
+[![PyPI pyversions](https://img.shields.io/pypi/pyversions/SSp-Detector.svg?logo=python)](https://pypi.python.org/pypi/SSp-Detector)
+[![License](https://img.shields.io/github/license/sjg2203/SSp_Detector?logo=apache)](https://github.com/sjg2203/SSp_Detector/blob/main/LICENSE)
 [![Security: bandit](https://img.shields.io/badge/security-bandit-yellow.svg)](https://github.com/PyCQA/bandit)
 [![PyPI - Status](https://img.shields.io/pypi/status/SSp_Detector)](https://pypi.python.org/pypi/SSp-Detector)
 [![Hit](https://img.shields.io/endpoint?url=https%3A%2F%2Fhits.dwyl.com%2Fsjg2203%2FSSp_Detector.svg&color=red)](http://hits.dwyl.com/sjg2203/SSp_Detector)
@@ -27,13 +27,13 @@ Note that this program is provided with NO WARRANTY OF ANY KIND under Apache 2.0
 
 To install the toolbox, simply use:
 
-- Using conda [![Conda package](https://github.com/sjg2203/SSp_Detector/actions/workflows/conda_publish.yml/badge.svg)](https://github.com/sjg2203/SSp_Detector/actions/workflows/conda_publish.yml)
+- Using conda [![Conda package](https://github.com/sjg2203/SSp_Detector/actions/workflows/conda_publish.yml/badge.svg?logo=anaconda)](https://github.com/sjg2203/SSp_Detector/actions/workflows/conda_publish.yml)
 
 ```python
 conda install -c conda-forge ssp_detector
 ```
 
-- Using pip [![Pypi package](https://github.com/sjg2203/SSp_Detector/actions/workflows/pypi_publish.yml/badge.svg?branch=main)](https://github.com/sjg2203/SSp_Detector/actions/workflows/pypi_publish.yml) [![PyPI - Wheel](https://img.shields.io/pypi/wheel/SSp_Detector)](https://pypi.python.org/pypi/SSp-Detector)
+- Using pip [![Pypi package](https://github.com/sjg2203/SSp_Detector/actions/workflows/pypi_publish.yml/badge.svg?branch=main?logo=pypi)](https://github.com/sjg2203/SSp_Detector/actions/workflows/pypi_publish.yml) [![PyPI - Wheel](https://img.shields.io/pypi/wheel/SSp_Detector)](https://pypi.python.org/pypi/SSp-Detector)
 
 ```python
 pip install ssp_detector
