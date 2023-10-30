@@ -13,6 +13,6 @@ jobs:
     - name: publish-to-conda
       uses: elbeejay/conda-publish-action@v1.5
       with:
-        subdir: 'conda'
+        subdir: '.conda'
         platforms: 'all'
         AnacondaToken: ${{ secrets.CONDA_API_TOKEN }}
