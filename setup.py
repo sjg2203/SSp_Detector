@@ -11,11 +11,19 @@
 #  EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+try:
+    import io
+    from setuptools import setup
+    _has_setuptools=True
+except ImportError:
+    from distutils.core import setup
+
 DISTNAME='SSp_Detector'
 VERSION='2023.10.28'
 DESCRIPTION='Sleep spindles detector'
 try:
-    LONG_DESCRIPTION=open('SSp_Detector/README.md','r')
+    with open('README.md') as readme_file:
+        LONG_DESCRIPTION=readme_file.read()
 except (IOError):
     LONG_DESCRIPTION='SSp_Detector: open-source Python package to detect sleep spindles using absolute or relative power.'
 DESCRIPTION_CONTENT_TYPE='text/markdown'
@@ -40,12 +48,6 @@ CLASSIFIERS=['Development Status :: 5 - Production/Stable',
              'Programming Language :: Python :: 3.10',
              'Programming Language :: Python :: 3.11',
              'Programming Language :: Python :: 3.12']
-
-try:
-    from setuptools import setup
-    _has_setuptools=True
-except ImportError:
-    from distutils.core import setup
 
 if __name__ == "__main__":
     setup(name=DISTNAME,
