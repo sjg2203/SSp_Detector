@@ -1,6 +1,7 @@
 # Sleep Spindles Detector
 
 [![PyPI - Version](https://img.shields.io/pypi/v/SSp_Detector?logo=pypi)](https://pypi.python.org/pypi/SSp-Detector)
+[![Conda (channel only)](https://img.shields.io/conda/vn/conda-forge/SSp_Detector?logo=anaconda&color=green)](https://anaconda.org/conda-forge/SSp_Detector)
 [![PyPI pyversions](https://img.shields.io/pypi/pyversions/SSp-Detector.svg?logo=python)](https://pypi.python.org/pypi/SSp-Detector)
 [![License](https://img.shields.io/github/license/sjg2203/SSp_Detector?logo=apache)](https://github.com/sjg2203/SSp_Detector/blob/main/LICENSE)
 [![Security: bandit](https://img.shields.io/badge/security-bandit-yellow.svg)](https://github.com/PyCQA/bandit)
@@ -33,7 +34,7 @@ To install the toolbox, simply use:
 conda install -c conda-forge ssp_detector
 ```
 
-- Using pip [![Pypi package](https://github.com/sjg2203/SSp_Detector/actions/workflows/pypi_publish.yml?branch=main?logo=pypi)](https://github.com/sjg2203/SSp_Detector/actions/workflows/pypi_publish.yml) [![PyPI - Wheel](https://img.shields.io/pypi/wheel/SSp_Detector)](https://pypi.python.org/pypi/SSp-Detector)
+- Using pip [![Pypi package](https://github.com/sjg2203/SSp_Detector/actions/workflows/pypi_publish.yml?branch=main&logo=pypi)](https://github.com/sjg2203/SSp_Detector/actions/workflows/pypi_publish.yml) [![PyPI - Wheel](https://img.shields.io/pypi/wheel/SSp_Detector)](https://pypi.python.org/pypi/SSp-Detector)
 
 ```python
 pip install ssp_detector
