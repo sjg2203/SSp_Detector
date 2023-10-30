@@ -14,4 +14,4 @@ jobs:
       uses: jegp/conda-package-publish-action@v1.5
       with:
         subDir: '.conda'
-        AnacondaToken: ${{ secrets.ANACONDA_TOKEN }}
+        AnacondaToken: ${{ secrets.CONDA_API_TOKEN }}
