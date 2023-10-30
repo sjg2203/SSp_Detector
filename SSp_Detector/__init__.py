@@ -8,16 +8,15 @@ path=os.path.abspath(os.path.dirname(__name__))
 logging.basicConfig(format='%(asctime)s|%(levelname)s|%(message)',datefmt='%y-%b-%d %H:%M:%S')
 
 __author__='Simon J. Guillot <simon.guillot@inserm.fr>'
-VERSION=''
 DISTNAME='SSp_Detector'
-about={}
+VERSION=''
 if not VERSION:
     pr=DISTNAME.lower().replace("-","_").replace(" ","_")
-    with open(os.path.join(path,pr,'SSp_Detector\__version__.py')) as f:
-        exec(f.read(),about)
+    with open(os.path.join(path,pr,'SSp_Detector\__version__.py')) as v:
+        VERSION='\n'+v.read()
 else:
-    about['__version__']=VERSION
-__version__=about['__version__']
+    VERSION=VERSION
+__version__=VERSION
 
 #Warn if newer version is available
 warn_if_outdated('SSp_Detector',__version__)
