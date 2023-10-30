@@ -21,13 +21,12 @@ path=os.path.abspath(os.path.dirname(__name__))
 
 DISTNAME='SSp_Detector'
 VERSION=''
-about={}
 if not VERSION:
     pr=DISTNAME.lower().replace("-","_").replace(" ","_")
-    with open(os.path.join(path,pr,'SSp_Detector\__version__.py')) as f:
-        exec(f.read(),about)
+    with open(os.path.join(path,pr,'SSp_Detector\__version__.py')) as v:
+        VERSION='\n'+v.read()
 else:
-    about['__version__']=VERSION
+    VERSION=VERSION
 DESCRIPTION='Sleep spindles detector'
 try:
     with io.open(os.path.join(path,'SSp_Detector\README.md'),encoding='utf-8') as f:
@@ -66,7 +65,7 @@ if __name__ == "__main__":
           long_description_content_type=DESCRIPTION_CONTENT_TYPE,
           license=LICENSE,
           url=URL,
-          version=about['__version__'],
+          version=VERSION,
           install_requires=INSTALL_REQUIRES,
           packages=PACKAGES,
           classifiers=CLASSIFIERS)
