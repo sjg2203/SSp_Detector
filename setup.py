@@ -22,7 +22,7 @@ DISTNAME='SSp_Detector'
 VERSION='2023.10.28'
 DESCRIPTION='Sleep spindles detector'
 try:
-    with open('README.md') as readme_file:
+    with io.open('README.md') as readme_file:
         LONG_DESCRIPTION=readme_file.read()
 except (IOError):
     LONG_DESCRIPTION='SSp_Detector: open-source Python package to detect sleep spindles using absolute or relative power.'
