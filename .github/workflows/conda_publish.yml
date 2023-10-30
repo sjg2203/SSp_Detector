@@ -9,9 +9,10 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: publish-to-conda
-      uses: jegp/conda-package-publish-action@v1.5
+      uses: elbeejay/conda-publish-action@v1.5
       with:
-        subDir: '.conda'
+        subdir: 'conda'
+        platforms: 'all'
         AnacondaToken: ${{ secrets.CONDA_API_TOKEN }}
