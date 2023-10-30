@@ -18,3 +18,5 @@ jobs:
           subdir: '.conda'
           anacondatoken: ${{ secrets.CONDA_API_TOKEN }}
           platforms: 'all'
+          override: true
+          dry_run:  true
