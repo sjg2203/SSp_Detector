@@ -12,7 +12,9 @@
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 import logging
+import os
 import mne
+import glob
 import scipy
 import numpy as np
 from scipy import signal
@@ -43,7 +45,11 @@ def spindles_abs(raw,sf,thresh={'abs_pow':1.25})->int:
 	Example
 	----------
 	>>> import mne
-	>>> from ssp_detector import spindles_abs
+	>>> import numpy as np
+	>>> from scipy import signal
+	>>> from mne.filter import filter_data
+	>>> from SSp_Detector import spindles_abs
+	>>> from scipy.interpolate import interp1d
 	>>> #Load an EDF file using MNE
 	>>> raw=mne.io.read_raw_edf("myfile.edf",preload=True)
 	>>> sfreq=raw.info['sfreq']
@@ -72,11 +78,12 @@ def spindles_abs(raw,sf,thresh={'abs_pow':1.25})->int:
 		thresh['abs_pow']=1.25
 	#If the sf<100Hz, then data will be resampled to meet the 100Hz requirement
 	if sf<100:
-		raw_data=raw.resample(100)
+		raw=raw.resample(100)
 		#raw_data=raw_data.get_data()[0]*1000000
 		sf=float(100)
 	freq_broad=[1,30]
-	data=filter_data(raw_data,sf,freq_broad[0],freq_broad[1],method='fir',verbose=0)  #Apply a low and high bandpass filter
+	raw=raw.get_data()[0]*1000000
+	data=filter_data(raw,sf,freq_broad[0],freq_broad[1],method='fir',verbose=0)  #Apply a low and high bandpass filter
 	data_sigma=data.copy()
 	N=20  #N order for the filter
 	nyquist=sf/2
@@ -136,7 +143,11 @@ def spindles_rel(raw,sf,thresh={'rel_pow':0.2})->int:
 	Example
 	----------
 	>>> import mne
-	>>> from ssp_detector import spindles_rel
+	>>> import numpy as np
+	>>> from scipy import signal
+	>>> from mne.filter import filter_data
+	>>> from SSp_Detector import spindles_rel
+	>>> from scipy.interpolate import interp1d
 	>>> #Load an EDF file using MNE
 	>>> raw=mne.io.read_raw_edf("myfile.edf",preload=True)
 	>>> sfreq=raw.info['sfreq']
@@ -165,11 +176,12 @@ def spindles_rel(raw,sf,thresh={'rel_pow':0.2})->int:
 		thresh['rel_pow']=0.2
 	#If the sf<100Hz, then data will be resampled to meet the 100Hz requirement
 	if sf<100:
-		raw_data=raw.resample(100)
+		raw=raw.resample(100)
 		#raw_data=raw_data.get_data()[0]*1000000
 		sf=float(100)
 	freq_broad=[1,30]
-	data=filter_data(raw_data,sf,freq_broad[0],freq_broad[1],method='fir',verbose=0)  #Apply a low and high bandpass filter
+	raw=raw.get_data()[0]*1000000
+	data=filter_data(raw,sf,freq_broad[0],freq_broad[1],method='fir',verbose=0)  #Apply a low and high bandpass filter
 	f,t,SXX=signal.stft(data,sf,nperseg=int((2*sf)),noverlap=int(((2*sf)-(0.2*sf))))  #Using STFT to compute the point-wise relative power
 	idx_band=np.logical_and(f>=freq_broad[0],f<=freq_broad[1])  #Keeping only the frequency of interest and Interpolating
 	f=f[idx_band]
