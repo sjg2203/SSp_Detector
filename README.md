@@ -31,7 +31,7 @@ To install the toolbox, simply use:
 - Using conda [![Board Status](https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ssp_detector-feedstock?branchName=main)](https://anaconda.org/conda-forge/ssp_detector)
 
 ```python
-conda install -c conda-forge ssp_detector
+conda install -c cf-staging ssp_detector
 ```
 
 - Using pip [![Pypi package](https://github.com/sjg2203/SSp_Detector/actions/workflows/pypi_publish.yml/badge.svg?branch=main)](https://github.com/sjg2203/SSp_Detector/actions/workflows/pypi_publish.yml) [![PyPI - Wheel](https://img.shields.io/pypi/wheel/SSp_Detector)](https://pypi.python.org/pypi/SSp-Detector)
