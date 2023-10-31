@@ -23,7 +23,7 @@ DISTNAME='SSp_Detector'
 VERSION=''
 if not VERSION:
     pr=DISTNAME.lower().replace("-","_").replace(" ","_")
-    with open(os.path.join(path,pr,'SSp_Detector\__version__.py')) as v:
+    with open(os.path.join(path,pr,pr,'__version__.py')) as v:
         VERSION='\n'+v.read()
 else:
     VERSION=VERSION
