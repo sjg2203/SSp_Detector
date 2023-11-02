@@ -12,7 +12,7 @@ assignees: ''
 
 *A clear and concise description of what the bug is.*
 
-> [!IMPORTANT]
+> [!WARNING]
 > **To Reproduce**
 
 *Steps to reproduce the behavior:*
