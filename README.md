@@ -65,3 +65,4 @@ If you use this toolbox, please cite as followed:
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10066031.svg)](https://doi.org/10.5281/zenodo.10066031)
 
  - Guillot, S.J.<a href="https://orcid.org/0000-0002-1623-7091"><img src="https://cdn.simpleicons.org/orcid/000/fff" alt="ORCID" width=17 height=17></a> (2023). Sleep spindles detector (2023.10.31-post1). GitHub, Zenodo. https://doi.org/10.5281/zenodo.10066031
+ - Guillot, S.J.<a id="cy-effective-orcid-url" class="underline" href="https://orcid.org/0000-0002-1623-7091" target="orcid.widget" rel="me noopener noreferrer" style="vertical-align: top"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width: 1em; margin-inline-start: 0.5em" alt="ORCID"/></a> (2023). Sleep spindles detector (2023.10.31-post1). GitHub, Zenodo. https://doi.org/10.5281/zenodo.10066031
