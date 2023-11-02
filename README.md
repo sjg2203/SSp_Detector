@@ -64,4 +64,4 @@ If you use this toolbox, please cite as followed:
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10066031.svg)](https://doi.org/10.5281/zenodo.10066031)
 
- - Guillot, S.J. (2023). Sleep spindles detector (2023.10.31-post1). GitHub, Zenodo. https://doi.org/10.5281/zenodo.10066031
+ - Guillot, S.J. <i class="fa-brands fa-orcid" style="color: #000000;"></i> (2023). Sleep spindles detector (2023.10.31-post1). GitHub, Zenodo. https://doi.org/10.5281/zenodo.10066031
