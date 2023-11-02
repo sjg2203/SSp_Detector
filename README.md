@@ -8,7 +8,7 @@
 [![PyPI - Status](https://img.shields.io/pypi/status/SSp_Detector)](https://pypi.python.org/pypi/SSp-Detector)
 [![Hit](https://img.shields.io/endpoint?url=https%3A%2F%2Fhits.dwyl.com%2Fsjg2203%2FSSp_Detector.svg&color=red)](http://hits.dwyl.com/sjg2203/SSp_Detector)
 
-[Sleep Spindles Detector](https://github.com/sjg2203/SSp_Detector) toolbox analyse raw EEG signals to then extrapolate the number of sleep spindles using either the absolute or relative Sigma power (11-16Hz).
+[Sleep Spindles Detector](https://github.com/sjg2203/SSp_Detector) toolbox analyses raw EEG signals to then extrapolate the number of sleep spindles using either the absolute or relative Sigma power (11-16Hz).
 
 The toolbox is optimised for Python 3.10 and above and was tested on both Windows and macOS ARM.
 
@@ -62,4 +62,6 @@ spindles_rel(raw,sf=sfreq,thresh={'rel_pow':0.2})
 
 If you use this toolbox, please cite as followed:
 
- - Simon J Guillot, Sleep Spindles Detector toolbox (version "build_number", https://github.com/sjg2203/SSp_Detector) in Python.
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10066031.svg)](https://doi.org/10.5281/zenodo.10066031)
+
+ - Guillot, S.J. (2023). Sleep spindles detector (2023.10.31-post1). GitHub, Zenodo. https://doi.org/10.5281/zenodo.10066031
