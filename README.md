@@ -12,7 +12,8 @@
 
 The toolbox is optimised for Python 3.10 and above and was tested on both Windows and macOS ARM.
 
-*All dependencies are listed in [requirements](requirements.txt).
+> [!NOTE]
+> All dependencies are listed in [requirements](requirements.txt), Python 3.10 minimum.
 
 ## Contribution [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/sjg2203/SSp_Detector/issues)
 
