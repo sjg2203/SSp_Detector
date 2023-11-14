@@ -59,6 +59,9 @@ spindles_abs(raw,sf=sfreq,thresh={'abs_pow':1.25})
 spindles_rel(raw,sf=sfreq,thresh={'rel_pow':0.2})
 ```
 
+Absolute power is calculated as followed:
+∫ab f(x) dx = h/3 [(y0 + yn) + 4(y1 + y3 + y5 + …. + yn-1) + 2(y2 + y4 + y6 + ….. + yn-2)]
+
 ## Citation [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10066031.svg)](https://doi.org/10.5281/zenodo.10066031)
 
 If you use this toolbox, please cite as followed:
