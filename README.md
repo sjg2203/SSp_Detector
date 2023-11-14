@@ -59,8 +59,13 @@ spindles_abs(raw,sf=sfreq,thresh={'abs_pow':1.25})
 spindles_rel(raw,sf=sfreq,thresh={'rel_pow':0.2})
 ```
 
-Absolute power is calculated as followed:
-$log10(\tfrac{\int_{11}^{16}\left|x(t)\right|^{2}dt}{\int_{0.1}^{45}\left|x(t)\right|^{2}dt})$
+Absolute Sigma power formula:
+$$P_{abs\sigma}(dB)=log10(\tfrac{\int_{11}^{16}\left|x(t)\right|^{2}dt}{\int_{0.1}^{45}\left|x(t)\right|^{2}dt})$
+log10(\tfrac{\int_{11}^{16}\left|x(t)\right|^{2}dt}{\int_{0.5}^{4}\left|x(t)\right|^{2}dt})$
+
+Relative Sigma power formula:
+$$P_{rel\sigma}(dB)=log10(\tfrac{\int_{11}^{16}\left|x(t)\right|^{2}dt}{\int_{0.1}^{45}\left|x(t)\right|^{2}dt})$
+log10(\tfrac{\int_{11}^{16}\left|x(t)\right|^{2}dt}{\int_{0.1}^{45}\left|x(t)\right|^{2}dt})$
 
 
 ## Citation [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10066031.svg)](https://doi.org/10.5281/zenodo.10066031)
