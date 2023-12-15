@@ -1,4 +1,4 @@
-<img src="./docs/SSp_Detector_logo.png"/>
+<img src="./docs/SSp_Detector_logo.png" width="200"/>
 
 # Sleep Spindles Detector
 
