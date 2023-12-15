@@ -1,4 +1,5 @@
-# Sleep Spindles Detector <img src="./docs/SSp_Detector_logo.png" width="200"/>
+# Sleep Spindles Detector
+<img src="./docs/SSp_Detector_logo.png" width="200"/>
 
 [![PyPI - Version](https://img.shields.io/pypi/v/SSp_Detector?logo=pypi)](https://pypi.python.org/pypi/SSp-Detector)
 [![Conda (channel only)](https://img.shields.io/conda/vn/conda-forge/SSp_Detector?logo=anaconda&color=green)](https://anaconda.org/conda-forge/SSp_Detector)
