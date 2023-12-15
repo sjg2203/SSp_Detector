@@ -1,4 +1,5 @@
-# Sleep Spindles Detector !(docs/SSp_Detector_logo.png "Sleep Spindles Detector")
+# Sleep Spindles Detector <img alt="Credit: Simon J. Guillot, 2023." src=".docs/SSp_Detector_logo.png"/><i
+                            class="photo-credit">Credit: Simon J. Guillot, 2023.</i>
 
 [![PyPI - Version](https://img.shields.io/pypi/v/SSp_Detector?logo=pypi)](https://pypi.python.org/pypi/SSp-Detector)
 [![Conda (channel only)](https://img.shields.io/conda/vn/conda-forge/SSp_Detector?logo=anaconda&color=green)](https://anaconda.org/conda-forge/SSp_Detector)
