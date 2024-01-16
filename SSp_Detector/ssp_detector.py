@@ -1,26 +1,23 @@
-# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-#  Copyright (c) 2023. Simon J. Guillot. All rights reserved.                            +
-#  Redistribution and use in source and binary forms, with or without modification, are strictly prohibited.
-#                                                                                        +
-#  THIS CODE IS PROVIDED BY THE COPYRIGHT HOLDER "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING,
-#  BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
-#  IN NO EVENT SHALL THE COPYRIGHT HOLDER BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY,
-#  OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-#  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
-#  STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS CODE,
-#  EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#   Copyright (c) 2024. Simon J. Guillot. All rights reserved.                            +
+#   Redistribution and use in source and binary forms, with or without modification, are strictly prohibited.
+#                                                                                         +
+#   THIS CODE IS PROVIDED BY THE COPYRIGHT HOLDER "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING,
+#   BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+#   IN NO EVENT SHALL THE COPYRIGHT HOLDER BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY,
+#   OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+#   DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+#   STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS CODE,
+#   EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 import logging
-import os
-import mne
-import glob
-import scipy
-import numpy as np
-from scipy import signal
-from mne.filter import filter_data
-from scipy.interpolate import interp1d
 
+import mne
+import numpy as np
+from mne.filter import filter_data
+from scipy import signal
+from scipy.interpolate import interp1d
 
 LOGGING_TYPES=dict(DEBUG=logging.DEBUG,
                      INFO=logging.INFO,
@@ -36,7 +33,8 @@ def spindles_abs(raw,sf,thresh={'abs_pow':1.25})->int:
 	----------
 	If you use this toolbox, please cite as followed:
 
-	* Simon J Guillot, Sleep Spindles Detector toolbox (version "build_number", https://github.com/sjg2203/) in Python.
+	* Guillot S.J., (2023). Sleep spindles detector (2023.10.31-post1). GitHub, Zenodo.
+	https://doi.org/10.5281/zenodo.10066031
 
 	We provide below some key points on the toolbox.
 
@@ -44,12 +42,7 @@ def spindles_abs(raw,sf,thresh={'abs_pow':1.25})->int:
 
 	Example
 	----------
-	>>> import mne
-	>>> import numpy as np
-	>>> from scipy import signal
-	>>> from mne.filter import filter_data
 	>>> from SSp_Detector import spindles_abs
-	>>> from scipy.interpolate import interp1d
 	>>> #Load an EDF file using MNE
 	>>> raw=mne.io.read_raw_edf("myfile.edf",preload=True)
 	>>> sfreq=raw.info['sfreq']
@@ -134,7 +127,8 @@ def spindles_rel(raw,sf,thresh={'rel_pow':0.2})->int:
 	----------
 	If you use this toolbox, please cite as followed:
 
-	* Simon J Guillot, Sleep Spindles Detector toolbox (version "build_number", https://github.com/sjg2203/) in Python.
+	* Guillot S.J., (2023). Sleep spindles detector (2023.10.31-post1). GitHub, Zenodo.
+	https://doi.org/10.5281/zenodo.10066031
 
 	We provide below some key points on the toolbox.
 
@@ -142,12 +136,7 @@ def spindles_rel(raw,sf,thresh={'rel_pow':0.2})->int:
 
 	Example
 	----------
-	>>> import mne
-	>>> import numpy as np
-	>>> from scipy import signal
-	>>> from mne.filter import filter_data
 	>>> from SSp_Detector import spindles_rel
-	>>> from scipy.interpolate import interp1d
 	>>> #Load an EDF file using MNE
 	>>> raw=mne.io.read_raw_edf("myfile.edf",preload=True)
 	>>> sfreq=raw.info['sfreq']
