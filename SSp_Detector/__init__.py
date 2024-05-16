@@ -17,21 +17,23 @@ from outdated import warn_if_outdated
 
 from .ssp_detector import *
 
-path=os.path.abspath(os.path.dirname(__name__))
+path = os.path.abspath(os.path.dirname(__name__))
 
-#Define logger
-logging.basicConfig(format='%(asctime)s|%(levelname)s|%(message)',datefmt='%y-%b-%d %H:%M:%S')
+# Define logger
+logging.basicConfig(
+    format="%(asctime)s|%(levelname)s|%(message)", datefmt="%y-%b-%d %H:%M:%S"
+)
 
-__author__='Simon J. Guillot <simon.guillot@inserm.fr>'
-DISTNAME='SSp_Detector'
-VERSION='2023.10.31.post1'
+__author__ = "Simon J. Guillot <simon.guillot@inserm.fr>"
+DISTNAME = "SSp_Detector"
+VERSION = "2023.10.31.post1"
 if not VERSION:
-    pr=DISTNAME.lower().replace("-","_").replace(" ","_")
-    with open(os.path.join(path,pr,pr,'__version__.py')) as v:
-        VERSION='\n'+v.read()
+    pr = DISTNAME.lower().replace("-", "_").replace(" ", "_")
+    with open(os.path.join(path, pr, pr, "__version__.py")) as v:
+        VERSION = "\n" + v.read()
 else:
-    VERSION=VERSION
-__version__=VERSION
+    VERSION = VERSION
+__version__ = VERSION
 
-#Warn if newer version is available
-warn_if_outdated('SSp_Detector',__version__)
+# Warn if newer version is available
+warn_if_outdated("SSp_Detector", __version__)

@@ -11,6 +11,6 @@
 #   EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-VERSION=(2023,10,31,'post1')
+VERSION = (2023, 10, 31, "post1")
 
-__version__='.'.join(map(str,VERSION))
+__version__ = ".".join(map(str, VERSION))

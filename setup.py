@@ -12,60 +12,71 @@
 #  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 try:
-    import io, os
+    import io
+    import os
     from setuptools import setup
-    _has_setuptools=True
+
+    _has_setuptools = True
 except ImportError:
     from distutils.core import setup
-path=os.path.abspath(os.path.dirname(__name__))
+path = os.path.abspath(os.path.dirname(__name__))
 
-DISTNAME='SSp_Detector'
-VERSION='2023.10.31.post1'
+DISTNAME = "SSp_Detector"
+VERSION = "2023.10.31.post1"
 if not VERSION:
-    pr=DISTNAME.lower().replace("-","_").replace(" ","_")
-    with open(os.path.join(path,pr,pr,'__version__.py')) as v:
-        VERSION='\n'+v.read()
+    pr = DISTNAME.lower().replace("-", "_").replace(" ", "_")
+    with open(os.path.join(path, pr, pr, "__version__.py")) as v:
+        VERSION = "\n" + v.read()
 else:
-    VERSION=VERSION
-DESCRIPTION='Sleep spindles detector'
+    VERSION = VERSION
+DESCRIPTION = "Sleep spindles detector"
 try:
-    with io.open(os.path.join(path,'SSp_Detector\README.md'),encoding='utf-8') as f:
-        LONG_DESCRIPTION='\n'+f.read()
+    with io.open(os.path.join(path, "SSp_Detector\README.md"), encoding="utf-8") as f:
+        LONG_DESCRIPTION = "\n" + f.read()
 except FileNotFoundError:
-    LONG_DESCRIPTION='SSp_Detector: open-source Python package to detect sleep spindles using absolute or relative power.'
-DESCRIPTION_CONTENT_TYPE='text/markdown'
-URL='https://github.com/sjg2203/SSp_Detector'
-MAINTAINER='Simon J. Guillot'
-MAINTAINER_EMAIL='simon.guillot@inserm.fr'
-LICENSE='Apache 2.0 license'
-PACKAGES=['SSp_Detector']
-INSTALL_REQUIRES=['mne>=1.5.1',
-                  'outdated',
-                  'numpy>=1.24.3',
-                  'pandas>=2.0.0',
-                  'scipy>=1.11']
-CLASSIFIERS=['Development Status :: 5 - Production/Stable',
-             'Intended Audience :: Science/Research',
-             'License :: OSI Approved :: Apache Software License',
-             'Operating System :: Unix',
-             'Operating System :: MacOS',
-             'Operating System :: Microsoft :: Windows',
-             'Programming Language :: Python :: 3 :: Only',
-             'Programming Language :: Python :: 3',
-             'Programming Language :: Python :: 3.10',
-             'Programming Language :: Python :: 3.11',
-             'Programming Language :: Python :: 3.12']
+    LONG_DESCRIPTION = (
+        "SSp_Detector: open-source Python package to detect sleep spindles using absolute or relative "
+        "power."
+    )
+DESCRIPTION_CONTENT_TYPE = "text/markdown"
+URL = "https://github.com/sjg2203/SSp_Detector"
+MAINTAINER = "Simon J. Guillot"
+MAINTAINER_EMAIL = "simon.guillot@inserm.fr"
+LICENSE = "Apache 2.0 license"
+PACKAGES = ["SSp_Detector"]
+INSTALL_REQUIRES = [
+    "mne>=1.5.1",
+    "outdated",
+    "numpy>=1.24.3",
+    "pandas>=2.0.0",
+    "scipy>=1.11",
+]
+CLASSIFIERS = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: Unix",
+    "Operating System :: MacOS",
+    "Operating System :: Microsoft :: Windows",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
 
 if __name__ == "__main__":
-    setup(name=DISTNAME,
-          author=MAINTAINER,
-          author_email=MAINTAINER_EMAIL,
-          description=DESCRIPTION,
-          long_description=LONG_DESCRIPTION,
-          long_description_content_type=DESCRIPTION_CONTENT_TYPE,
-          license=LICENSE,
-          url=URL,
-          version=VERSION,
-          install_requires=INSTALL_REQUIRES,
-          packages=PACKAGES,
-          classifiers=CLASSIFIERS)
+    setup(
+        name=DISTNAME,
+        author=MAINTAINER,
+        author_email=MAINTAINER_EMAIL,
+        description=DESCRIPTION,
+        long_description=LONG_DESCRIPTION,
+        long_description_content_type=DESCRIPTION_CONTENT_TYPE,
+        license=LICENSE,
+        url=URL,
+        version=VERSION,
+        install_requires=INSTALL_REQUIRES,
+        packages=PACKAGES,
+        classifiers=CLASSIFIERS,
+    )
