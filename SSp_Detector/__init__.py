@@ -26,7 +26,7 @@ logging.basicConfig(
 
 __author__ = "Simon J. Guillot <simon.guillot@inserm.fr>"
 DISTNAME = "SSp_Detector"
-VERSION = "2023.10.31.post1"
+VERSION = "2024.12.10"
 if not VERSION:
     pr = DISTNAME.lower().replace("-", "_").replace(" ", "_")
     with open(os.path.join(path, pr, pr, "__version__.py")) as v:
