@@ -18,7 +18,7 @@ from mne.filter import filter_data
 from scipy import signal
 from scipy.interpolate import interp1d
 
-LOGGING_TYPES = dict(
+LOGGING_TYPES=dict(
     DEBUG=logging.DEBUG,
     INFO=logging.INFO,
     WARNING=logging.WARNING,
@@ -27,14 +27,14 @@ LOGGING_TYPES = dict(
 )
 
 
-def spindles_abs(raw, sf, thresh={"abs_pow": 1.25}) -> int:
+def spindles_abs(raw,sf,thresh=None) -> int:
     """Detects sleep spindles using absolute Sigma power.
 
     Notes
     ----------
     If you use this toolbox, please cite as followed:
 
-    * Guillot S.J., (2023). Sleep spindles detector (2023.10.31-post1). GitHub, Zenodo.
+    * Guillot S.J., (2023). Sleep spindles detector (2024.12.10). GitHub, Zenodo.
     https://doi.org/10.5281/zenodo.10066031
 
     We provide below some key points on the toolbox.
@@ -68,77 +68,51 @@ def spindles_abs(raw, sf, thresh={"abs_pow": 1.25}) -> int:
             count of sleep spindles using absolute Sigma power.
     """
 
-    if "abs_pow" not in thresh.keys():
-        thresh["abs_pow"] = 1.25
-    # If the sf<100Hz, then data will be resampled to meet the 100Hz requirement
-    if sf < 100:
-        raw = raw.resample(100)
+    if thresh is None:
+        thresh={"abs_pow":1.25}
+    if "abs_pow" not in thresh:
+        thresh["abs_pow"]=1.25
+    # Resample data if sampling frequency is less than 100 Hz
+    if sf<100:
+        raw=raw.resample(100)
         # raw_data=raw_data.get_data()[0]*1000000
-        sf = float(100)
-    freq_broad = [1, 30]
-    raw = raw.get_data()[0] * 1000000
-    data = filter_data(
-        raw, sf, freq_broad[0], freq_broad[1], method="fir", verbose=0
-    )  # Apply a low and high bandpass filter
-    data_sigma = data.copy()
-    N = 20  # N order for the filter
-    nyquist = sf / 2
-    Wn = 11 / nyquist
-    sos = signal.iirfilter(N, Wn, btype="Highpass", output="sos")
-    data_sigma = signal.sosfiltfilt(sos, data_sigma)
-    Wn = 16 / nyquist
-    sos = signal.iirfilter(N, Wn, btype="lowpass", output="sos")
-    data_sigma = signal.sosfiltfilt(sos, data_sigma)
-    duration = 0.3
-    halfduration = duration / 2
-    total_duration = len(data_sigma) / sf
-    last = len(data_sigma) - 1
-    step = 0.1
-    len_out = int(len(data_sigma) / (step * sf))
-    out = np.zeros(len_out)
-    tt = np.zeros(len_out)
-    for i, j in enumerate(np.arange(0, total_duration, step)):
-        beg = max(0, int((j - halfduration) * sf))
-        end = min(last, int((j + halfduration) * sf))
-        tt[i] = np.column_stack((beg, end)).mean(1) / sf
-        out[i] = np.mean(np.square(data_sigma[beg:end]))
-    dat_det_w = out
-    dat_det_w[dat_det_w <= 0] = 0.000000001
-    abs_sig_pow = np.log10(dat_det_w)
-    interop = interp1d(
-        tt,
-        abs_sig_pow,
-        kind="cubic",
-        bounds_error=False,
-        fill_value=0,
-        assume_sorted=True,
-    )
-    tt = np.arange(data_sigma.size) / sf
-    abs_sig_pow = interop(tt)
+        sf=float(100)
+    freq_broad=[1,30]
+    raw=raw.get_data()[0]*1e6
+    data=filter_data(raw,sf,freq_broad[0],freq_broad[1],method="fir",verbose=0)
+    # Apply a low and high bandpass filter
+    nyquist=sf/2
+    data_sigma=signal.sosfiltfilt(signal.iirfilter(20,[11/nyquist,16/nyquist],btype='bandpass',output='sos'),
+                                  data.copy())
+    duration=0.3
+    step=0.1
+    total_duration=len(data_sigma)/sf
+    len_out=int(total_duration/step)
+    out=np.zeros(len_out)
+    tt=np.zeros(len_out)
+    for i,j in enumerate(np.arange(0,total_duration,step)):
+        beg=max(0,int((j-duration/2)*sf))
+        end=min(len(data_sigma)-1,int((j+duration/2)*sf))
+        tt[i]=(beg+end)/(2*sf)
+        out[i]=np.mean(np.square(data_sigma[beg:end]))
+    abs_sig_pow=np.log10(np.clip(out,1e-9,None))
+    abs_sig_pow_interp=interp1d(tt,abs_sig_pow,kind='cubic',bounds_error=False,fill_value=0,assume_sorted=True)(
+        np.arange(len(data_sigma))/sf)
     # Count of sleep spindles using absolute sigma power
-    text = "spindles"
-    spindles_count_abs_pow = {}
-    name = 0
-    for item in abs_sig_pow:
-        if item >= thresh["abs_pow"]:
-            spindles_count_abs_pow["item" + str(name)] = [item]
-        else:
-            name += 1
-    if len(spindles_count_abs_pow) == 1:
-        text = "spindle"
-    spindles_abs_count = len(spindles_count_abs_pow)
-    print("Using absolute Sigma power:", spindles_abs_count, text)
-    return spindles_abs_count
+    spindles_count_abs_pow=len([item for item in abs_sig_pow_interp if item>=thresh["abs_pow"]])
+    print(
+        f"Using absolute Sigma power: {spindles_count_abs_pow} "
+        f"{'spindle' if spindles_count_abs_pow==1 else 'spindles'}")
+    return spindles_count_abs_pow
 
-
-def spindles_rel(raw, sf, thresh={"rel_pow": 0.2}) -> int:
+def spindles_rel(raw, sf, thresh=None) -> int:
     """Detects sleep spindles using relative Sigma power.
 
     Notes
     ----------
     If you use this toolbox, please cite as followed:
 
-    * Guillot S.J., (2023). Sleep spindles detector (2023.10.31-post1). GitHub, Zenodo.
+    * Guillot S.J., (2023). Sleep spindles detector (2024.12.10). GitHub, Zenodo.
     https://doi.org/10.5281/zenodo.10066031
 
     We provide below some key points on the toolbox.
@@ -172,42 +146,30 @@ def spindles_rel(raw, sf, thresh={"rel_pow": 0.2}) -> int:
             count of sleep spindles using relative Sigma power.
     """
 
-    if "rel_pow" not in thresh.keys():
-        thresh["rel_pow"] = 0.2
+    if thresh is None:
+        thresh={"rel_pow":0.2}
+    if "rel_pow" not in thresh:
+        thresh["rel_pow"]=0.2
     # If the sf<100Hz, then data will be resampled to meet the 100Hz requirement
-    if sf < 100:
-        raw = raw.resample(100)
+    if sf<100:
+        raw=raw.resample(100)
         # raw_data=raw_data.get_data()[0]*1000000
-        sf = float(100)
-    freq_broad = [1, 30]
-    raw = raw.get_data()[0] * 1000000
-    data = filter_data(
-        raw, sf, freq_broad[0], freq_broad[1], method="fir", verbose=0
-    )  # Apply a low and high bandpass filter
-    f, t, SXX = signal.stft(
-        data, sf, nperseg=int((2 * sf)), noverlap=int(((2 * sf) - (0.2 * sf)))
-    )  # Using STFT to compute the point-wise relative power
-    idx_band = np.logical_and(
-        f >= freq_broad[0], f <= freq_broad[1]
-    )  # Keeping only the frequency of interest and Interpolating
-    f = f[idx_band]
-    SXX = SXX[idx_band, :]
-    SXX = np.square(np.abs(SXX))
-    sum_pow = SXX.sum(0).reshape(1, -1)
-    np.divide(SXX, sum_pow, out=SXX)
-    idx_sigma = np.logical_and(f >= 11, f <= 16)  # Extracting the relative sigma power
-    rel_power = SXX[idx_sigma].sum(0)
+        sf=float(100)
+    freq_broad=[1,30]
+    raw=raw.get_data()[0]*1e6
+    data=filter_data(raw,sf,freq_broad[0],freq_broad[1],method="fir",verbose=0)
+    # Apply a low and high bandpass filter
+    f,t,SXX=signal.stft(data,sf,nperseg=int(2*sf),noverlap=int(1.8*sf))
+    # Using STFT to compute the point-wise relative power
+    idx_band=np.logical_and(f>=freq_broad[0],f<=freq_broad[1])
+    # Keeping only the frequency of interest and Interpolating
+    SXX=np.square(np.abs(SXX[idx_band]))
+    sum_pow=SXX.sum(axis=0,keepdims=True)
+    rel_power=SXX/sum_pow
+    idx_sigma=np.logical_and(f[idx_band]>=11,f[idx_band]<=16)
+    rel_power=rel_power[idx_sigma].sum(axis=0)
     # Count of sleep spindles using relative sigma power
-    text = "spindles"
-    spindles_count_rel_pow = {}
-    name = 0
-    for item in rel_power:
-        if item >= thresh["rel_pow"]:
-            spindles_count_rel_pow["item" + str(name)] = [item]
-        else:
-            name += 1
-    if len(spindles_count_rel_pow) == 1:
-        text = "spindle"
-    spindles_rel_count = len(spindles_count_rel_pow)
-    print("Using relative Sigma power:", spindles_rel_count, text)
+    spindles_rel_count=(rel_power>=thresh["rel_pow"]).sum()
+    text="spindle" if spindles_rel_count==1 else "spindles"
+    print(f"Using relative Sigma power: {spindles_rel_count} {text}")
     return spindles_rel_count
