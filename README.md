@@ -21,7 +21,7 @@ The toolbox is optimised for Python 3.10 and above and was tested on both Window
 
 If you use this toolbox, please cite as followed:
 
- - Guillot, S.J.<a id="cy-effective-orcid-url" class="underline" href="https://orcid.org/0000-0002-1623-7091" target="orcid.widget" rel="me noopener noreferrer" style="vertical-align: top"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width: 1em; margin-inline-start: 0.5em" alt="ORCID"/></a> (2023). Sleep spindles detector (2024.12.10). GitHub, Zenodo. https://doi.org/10.5281/zenodo.10066031
+ - Guillot, S.J.<a id="cy-effective-orcid-url" class="underline" href="https://orcid.org/0000-0002-1623-7091" target="orcid.widget" rel="me noopener noreferrer" style="vertical-align: top"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width: 1em; margin-inline-start: 0.5em" alt="ORCID"/></a> (2023). Sleep spindles detector (2024.12.13). GitHub, Zenodo. https://doi.org/10.5281/zenodo.10066031
 
 ## Contribution [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/sjg2203/SSp_Detector/issues)
 
