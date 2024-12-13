@@ -11,6 +11,6 @@
 #   EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-VERSION = (2024, 12, 10, "")
+VERSION = (2024, 12, 13, "")
 
 __version__ = ".".join(map(str, VERSION))
