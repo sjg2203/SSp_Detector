@@ -22,7 +22,7 @@ except ImportError:
 path = os.path.abspath(os.path.dirname(__name__))
 
 DISTNAME = "SSp_Detector"
-VERSION = "2024.12.10"
+VERSION = "2024.12.13"
 if not VERSION:
     pr = DISTNAME.lower().replace("-", "_").replace(" ", "_")
     with open(os.path.join(path, pr, pr, "__version__.py")) as v:
