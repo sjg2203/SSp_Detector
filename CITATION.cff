@@ -1,0 +1,35 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: Sleep Spindles Detector
+message: >-
+  If you use this toolbox, please cite as follows: Guillot,
+  S.J. (2023). Sleep Spindles Detector (2024.12.13). GitHub,
+  Zenodo. https://doi.org/10.5281/zenodo.10066031
+type: software
+authors:
+  - given-names: Simon J
+    family-names: Guillot
+    email: simon.guillot@inserm.fr
+    affiliation: University of Oxford
+    orcid: 'https://orcid.org/0000-0002-1623-7091'
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.10651391
+    description: Zenodo
+repository-code: 'https://github.com/sjg2203/SSp_Detector'
+abstract: >-
+  SSp Detector (Sleep Spindles Detector): Sleep Spindles
+  Detector toolbox analyses raw EEG signals to then
+  extrapolate the number of sleep spindles using either the
+  absolute or relative Sigma power (11-16Hz).
+keywords:
+  - Sleep
+  - Sleep spindles
+  - EEG
+  - Python
+license: Apache-2.0
+commit: d419e4a
+version: 2024.12.13
+date-released: '2024-12-13'
